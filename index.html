@@ -1,0 +1,4748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Motuu ❤️</title>
+
+<style>
+
+/* =========================================================
+   FONTS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    background: #fffdf8;
+
+    color: #4b4650;
+
+    font-family: 'DM Sans', sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 80px 7vw 110px;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow-x: hidden;
+
+    isolation: isolate;
+}
+
+.page.active {
+
+    display: flex;
+
+    animation:
+        pageAppear 0.8s ease;
+}
+
+@keyframes pageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND DECORATION
+========================================================= */
+
+.page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    opacity: 0.55;
+
+    top: -180px;
+
+    left: -150px;
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+.page::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+
+    height: 380px;
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    opacity: 0.5;
+
+    bottom: -180px;
+
+    right: -150px;
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GLOBAL BUTTON
+========================================================= */
+
+.next-button {
+
+    position: fixed;
+
+    right: 28px;
+
+    bottom: 24px;
+
+    z-index: 80;
+
+    padding: 13px 23px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(80,70,100,0.15);
+
+    background:
+        rgba(255,255,255,0.82);
+
+    backdrop-filter: blur(12px);
+
+    color: #5e5668;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(70,60,90,0.10);
+
+    transition: 0.3s ease;
+}
+
+.next-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background: #6e5a82;
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px rgba(70,60,90,0.16);
+}
+
+
+/* =========================================================
+   MUSIC CONTROL
+========================================================= */
+
+.music-control {
+
+    position: fixed;
+
+    left: 24px;
+
+    bottom: 24px;
+
+    z-index: 100;
+
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(80,70,100,0.15);
+
+    background:
+        rgba(255,255,255,0.84);
+
+    backdrop-filter: blur(12px);
+
+    color: #655c6f;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(70,60,90,0.10);
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+.music-control:hover {
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   PAGE 1 — INTRO / WELCOME
+   SOFT CREAM
+========================================================= */
+
+#page1 {
+
+    height: 100vh;
+
+    min-height: 100vh;
+
+    padding:
+        40px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            #fffaf0 55%,
+            #fff8f5
+        );
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+#page1::before {
+
+    background: #f9e7c9;
+}
+
+#page1::after {
+
+    background: #f4dce9;
+}
+
+
+.intro {
+
+    width:
+        min(900px, 100%);
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 30px;
+}
+
+
+/* small top line */
+
+.intro-small {
+
+    font-family: 'Quicksand', sans-serif;
+
+    color: #9b7e69;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 0.8s ease forwards;
+
+    animation-delay: 0.2s;
+}
+
+
+/* main title */
+
+.intro h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(55px, 9vw, 120px);
+
+    font-weight: 500;
+
+    line-height: 0.94;
+
+    color: #554a49;
+
+    opacity: 0;
+
+    animation:
+        titleEntrance 1.3s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+
+    animation-delay: 0.4s;
+}
+
+@keyframes titleEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.96);
+
+        letter-spacing: 8px;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        letter-spacing: normal;
+
+    }
+
+}
+
+.intro h1 span {
+
+    color: #a97082;
+}
+
+
+.intro p {
+
+    margin-top: 28px;
+
+    color: #8d7d79;
+
+    font-size: 15px;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 0.8s ease forwards;
+
+    animation-delay: 1s;
+}
+
+
+/* tiny mission line */
+
+.mission-line {
+
+    margin-top: 12px;
+
+    color: #a08e89;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 0.8s ease forwards;
+
+    animation-delay: 1.2s;
+}
+
+
+/* START GAME */
+
+.start-button {
+
+    margin-top: 42px;
+
+    padding:
+        16px 35px;
+
+    border:
+        1px solid #caa9a5;
+
+    border-radius: 12px;
+
+    background:
+        #fffdf8;
+
+    color: #674d50;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(117,80,77,0.10);
+
+    transition:
+        0.3s ease;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 0.8s ease forwards;
+
+    animation-delay: 1.45s;
+}
+
+.start-button::before {
+
+    content: "▶ ";
+
+}
+
+.start-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        #795c61;
+
+    color: white;
+
+    border-color:
+        #795c61;
+
+    box-shadow:
+        0 16px 35px
+        rgba(117,80,77,0.18);
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGE 2 — ACHIEVEMENT SYSTEM
+   FADED LAVENDER
+========================================================= */
+
+#page2 {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f0ff,
+            #faf8ff 52%,
+            #f0eaff
+        );
+
+    align-items:
+        flex-start;
+}
+
+#page2::before {
+
+    background: #ddd2ff;
+}
+
+#page2::after {
+
+    background: #d9eef0;
+}
+
+
+.profile-wrapper {
+
+    width:
+        min(930px, 100%);
+
+    padding:
+        20px 0 50px;
+}
+
+
+/* PROFILE HEADER */
+
+.profile-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-end;
+
+    gap: 20px;
+
+    padding-bottom:
+        22px;
+
+    border-bottom:
+        1px solid #ddd5ed;
+
+    margin-bottom:
+        30px;
+}
+
+.profile-tag {
+
+    color: #8773a7;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+.profile-name {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color: #55446f;
+
+    font-size:
+        clamp(36px, 5vw, 58px);
+
+    font-weight: 500;
+}
+
+.profile-id {
+
+    color: #988ca6;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size: 12px;
+
+    text-align: right;
+}
+
+.secret-heart {
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.secret-heart:hover {
+
+    transform:
+        scale(1.2);
+}
+
+
+/* PROFILE CARD */
+
+.profile-card {
+
+    background:
+        rgba(255,255,255,0.72);
+
+    border:
+        1px solid #ded6ee;
+
+    border-radius:
+        25px;
+
+    padding:
+        30px;
+
+    box-shadow:
+        0 18px 50px
+        rgba(90,70,120,0.07);
+}
+
+
+/* CURRENT QUEST */
+
+.current-quest {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 25px;
+
+    padding:
+        20px 22px;
+
+    border-radius:
+        18px;
+
+    background:
+        #f4efff;
+
+    border:
+        1px solid #e3daf4;
+
+    margin-bottom:
+        28px;
+}
+
+.quest-label {
+
+    color: #9586a5;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 6px;
+}
+
+.quest-name {
+
+    color: #5d4b76;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        26px;
+}
+
+.quest-status {
+
+    color: #559275;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space:
+        nowrap;
+}
+
+
+/* STATS */
+
+.stats-title {
+
+    color: #6f5b89;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        26px;
+
+    margin-bottom:
+        18px;
+}
+
+.stats {
+
+    display:
+        grid;
+
+    gap:
+        11px;
+}
+
+.stat {
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        190px 1fr 50px;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        14px 16px;
+
+    border-radius:
+        14px;
+
+    background:
+        #fbfaff;
+
+    border:
+        1px solid #e7e1f0;
+
+    cursor:
+        default;
+
+    transition:
+        0.25s ease;
+}
+
+.stat:hover {
+
+    background:
+        #f2edff;
+
+    transform:
+        translateX(4px);
+}
+
+.stat-name {
+
+    color:
+        #5c5266;
+
+    font-weight:
+        600;
+
+    font-size:
+        13px;
+}
+
+.stat-bar {
+
+    color:
+        #8067a1;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size:
+        13px;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+}
+
+.stat-number {
+
+    color:
+        #6c5985;
+
+    text-align:
+        right;
+
+    font-weight:
+        700;
+}
+
+
+/* TOOLTIP */
+
+.stat-tip {
+
+    position:
+        absolute;
+
+    left:
+        190px;
+
+    bottom:
+        calc(100% + 10px);
+
+    z-index:
+        20;
+
+    width:
+        270px;
+
+    padding:
+        13px 15px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid #ddd4eb;
+
+    border-radius:
+        12px;
+
+    color:
+        #70647b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+    box-shadow:
+        0 12px 30px
+        rgba(70,55,90,0.12);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        0.2s ease;
+}
+
+.stat:hover .stat-tip,
+.stat:focus .stat-tip {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ACHIEVEMENT */
+
+.achievement-card {
+
+    margin-top:
+        25px;
+
+    padding:
+        25px;
+
+    border-radius:
+        20px;
+
+    background:
+        #fff8df;
+
+    border:
+        1px solid #ebdda9;
+
+    text-align:
+        center;
+}
+
+.achievement-small {
+
+    color:
+        #a28338;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        3px;
+}
+
+.achievement-card h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #775c2c;
+
+    font-size:
+        34px;
+
+    margin:
+        7px 0;
+}
+
+.achievement-card p {
+
+    color:
+        #8e7a53;
+
+    font-size:
+        13px;
+}
+
+.congrats-small {
+
+    text-align:
+        center;
+
+    margin-top:
+        28px;
+
+    color:
+        #8668a6;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(27px, 4vw, 45px);
+}
+
+
+/* =========================================================
+   PAGE 3 — QUEST TIMELINE
+   SOFT LIME / MINT
+========================================================= */
+
+#page3 {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2f8e7,
+            #f9fceF 52%,
+            #eaf7ed
+        );
+
+    align-items:
+        flex-start;
+}
+
+#page3::before {
+
+    background:
+        #d9eab5;
+}
+
+#page3::after {
+
+    background:
+        #cfeee0;
+}
+
+
+.timeline-wrapper {
+
+    width:
+        min(850px, 100%);
+
+    padding:
+        20px 0 60px;
+}
+
+.timeline-header {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        50px;
+}
+
+.timeline-header .section-label {
+
+    color:
+        #78905b;
+}
+
+.timeline-header h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #526a3e;
+
+    font-size:
+        clamp(48px, 7vw, 80px);
+
+    font-weight:
+        500;
+}
+
+.timeline-header p {
+
+    color:
+        #87947b;
+
+    margin-top:
+        10px;
+}
+
+
+/* TIMELINE */
+
+.timeline {
+
+    position:
+        relative;
+
+    width:
+        min(650px, 100%);
+
+    margin:
+        auto;
+}
+
+.timeline::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        19px;
+
+    top:
+        18px;
+
+    bottom:
+        18px;
+
+    width:
+        2px;
+
+    background:
+        #cbdcab;
+}
+
+
+/* TIMELINE ITEM */
+
+.timeline-item {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+    margin-bottom:
+        32px;
+}
+
+.timeline-item:last-child {
+    margin-bottom:
+        0;
+}
+
+.timeline-dot {
+
+    flex:
+        0 0 40px;
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border-radius:
+        50%;
+
+    background:
+        #f8fbeF;
+
+    border:
+        2px solid #a9c285;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #63834c;
+
+    font-size:
+        15px;
+
+    z-index:
+        2;
+}
+
+.timeline-item.final .timeline-dot {
+
+    background:
+        #dcefc7;
+
+    border-color:
+        #7ea85d;
+
+    animation:
+        pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+
+    0%,100% {
+        box-shadow:
+            0 0 0 0
+            rgba(126,168,93,0.15);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 10px
+            rgba(126,168,93,0.02);
+    }
+}
+
+.timeline-content {
+
+    flex:
+        1;
+
+    padding:
+        16px 20px;
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    border:
+        1px solid #dce7d1;
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,105,60,0.06);
+}
+
+.timeline-content h3 {
+
+    color:
+        #5d7549;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size:
+        14px;
+
+    letter-spacing:
+        1px;
+
+    margin-bottom:
+        5px;
+}
+
+.timeline-content p {
+
+    color:
+        #819078;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+}
+
+.timeline-item.final h3 {
+
+    color:
+        #477d4c;
+}
+
+
+/* =========================================================
+   PAGE 4 — MEMORIES
+   SOFT CYAN
+========================================================= */
+
+#page4 {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eafafa,
+            #f6ffff 52%,
+            #eaf5ff
+        );
+
+    align-items:
+        flex-start;
+}
+
+#page4::before {
+
+    background:
+        #c9eeee;
+}
+
+#page4::after {
+
+    background:
+        #d6e7fa;
+}
+
+
+.memories-wrapper {
+
+    width:
+        min(1050px, 100%);
+
+    padding:
+        20px 0 70px;
+}
+
+.memories-header {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        48px;
+}
+
+.memories-header h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #416d75;
+
+    font-size:
+        clamp(50px, 7vw, 84px);
+
+    font-weight:
+        500;
+}
+
+.memories-header p {
+
+    color:
+        #789297;
+
+    margin-top:
+        10px;
+}
+
+
+/* SCRAPBOOK GRID */
+
+.scrapbook {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        45px 35px;
+
+    align-items:
+        start;
+}
+
+
+/* POLAROIDS */
+
+.polaroid {
+
+    background:
+        #fffefa;
+
+    padding:
+        11px 11px 20px;
+
+    box-shadow:
+        0 16px 35px
+        rgba(61,105,112,0.13);
+
+    transition:
+        0.4s ease;
+
+    cursor:
+        default;
+}
+
+.polaroid:nth-child(1) {
+    transform:
+        rotate(-3deg);
+}
+
+.polaroid:nth-child(2) {
+    transform:
+        rotate(2deg);
+}
+
+.polaroid:nth-child(3) {
+    transform:
+        rotate(-2deg);
+}
+
+.polaroid:nth-child(4) {
+    transform:
+        rotate(3deg);
+}
+
+.polaroid:nth-child(5) {
+    transform:
+        rotate(-2deg);
+}
+
+.polaroid:nth-child(6) {
+    transform:
+        rotate(2deg);
+}
+
+.polaroid:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-8px)
+        scale(1.025);
+
+    box-shadow:
+        0 25px 50px
+        rgba(61,105,112,0.18);
+}
+
+.polaroid-image {
+
+    width:
+        100%;
+
+    height:
+        220px;
+
+    overflow:
+        hidden;
+
+    background:
+        #dceff0;
+}
+
+.polaroid-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+}
+
+.polaroid-title {
+
+    margin-top:
+        15px;
+
+    color:
+        #416d75;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size:
+        27px;
+
+    font-weight:
+        600;
+}
+
+.polaroid-caption {
+
+    margin-top:
+        4px;
+
+    color:
+        #789095;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.25;
+}
+
+
+/* =========================================================
+   PAGE 5 — FINAL ACHIEVEMENT
+   PALE PEACH
+========================================================= */
+
+#page5 {
+
+    height:
+        100vh;
+
+    min-height:
+        100vh;
+
+    padding:
+        30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1e7,
+            #fffaf4 52%,
+            #ffece2
+        );
+
+    overflow:
+        hidden;
+
+    text-align:
+        center;
+}
+
+#page5::before {
+
+    background:
+        #ffd8c4;
+}
+
+#page5::after {
+
+    background:
+        #f6d5dd;
+}
+
+
+.achievement-screen {
+
+    width:
+        min(850px, 100%);
+
+    position:
+        relative;
+
+    z-index:
+        10;
+}
+
+
+/* MISSION COMPLETE */
+
+.mission-complete {
+
+    color:
+        #9d755f;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        5px;
+
+    margin-bottom:
+        22px;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+}
+
+
+/* player info */
+
+.final-player {
+
+    color:
+        #6e584e;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
+    opacity:
+        0;
+
+    margin-bottom:
+        8px;
+}
+
+.final-quest {
+
+    color:
+        #8b746a;
+
+    font-size:
+        14px;
+
+    opacity:
+        0;
+}
+
+
+/* STATUS */
+
+.final-status {
+
+    margin-top:
+        12px;
+
+    color:
+        #57906f;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    opacity:
+        0;
+}
+
+
+/* ACHIEVEMENT */
+
+.final-unlock {
+
+    margin-top:
+        30px;
+
+    opacity:
+        0;
+
+    transform:
+        scale(0.8);
+}
+
+.trophy {
+
+    font-size:
+        clamp(38px, 6vw, 60px);
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+}
+
+.unlock-label {
+
+    color:
+        #a27c42;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        4px;
+}
+
+.unlock-name {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #815f39;
+
+    font-size:
+        clamp(40px, 6vw, 70px);
+
+    line-height:
+        1;
+
+    margin-top:
+        7px;
+}
+
+.xp {
+
+    color:
+        #b17a49;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    margin-top:
+        12px;
+}
+
+
+/* CELEBRATION */
+
+.celebration-message {
+
+    margin-top:
+        25px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #a66d79;
+
+    font-size:
+        clamp(26px, 4vw, 45px);
+
+    opacity:
+        0;
+
+    transform:
+        translateY(10px);
+}
+
+
+/* ANIMATION CLASSES */
+
+#page5.active .mission-complete {
+
+    animation:
+        revealUp 0.7s ease
+        0.2s forwards;
+}
+
+#page5.active .final-player {
+
+    animation:
+        revealUp 0.7s ease
+        0.9s forwards;
+}
+
+#page5.active .final-quest {
+
+    animation:
+        revealUp 0.7s ease
+        1.2s forwards;
+}
+
+#page5.active .final-status {
+
+    animation:
+        revealUp 0.7s ease
+        1.5s forwards;
+}
+
+#page5.active .final-unlock {
+
+    animation:
+        achievementPop 0.9s
+        2s forwards;
+}
+
+#page5.active .celebration-message {
+
+    animation:
+        revealUp 0.8s ease
+        2.8s forwards;
+}
+
+@keyframes revealUp {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes achievementPop {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            scale(0.7)
+            rotate(-4deg);
+
+    }
+
+    60% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.08)
+            rotate(2deg);
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGE 6 — PERSONAL MESSAGE
+   SOFT PINK
+========================================================= */
+
+#page6 {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #fff9f6 52%,
+            #f9eef5
+        );
+
+    align-items:
+        flex-start;
+}
+
+#page6::before {
+
+    background:
+        #ffdce8;
+}
+
+#page6::after {
+
+    background:
+        #e8ddf8;
+}
+
+
+.letter-wrapper {
+
+    position:
+        relative;
+
+    width:
+        min(800px, 100%);
+
+    padding:
+        25px 0 80px;
+}
+
+
+/* decorative hearts */
+
+.decor {
+
+    position:
+        absolute;
+
+    font-size:
+        25px;
+
+    opacity:
+        0.55;
+
+    pointer-events:
+        none;
+}
+
+.decor.one {
+
+    top:
+        20px;
+
+    left:
+        -20px;
+
+    transform:
+        rotate(-15deg);
+}
+
+.decor.two {
+
+    top:
+        180px;
+
+    right:
+        -30px;
+
+    transform:
+        rotate(12deg);
+}
+
+.decor.three {
+
+    bottom:
+        100px;
+
+    left:
+        -30px;
+
+    transform:
+        rotate(10deg);
+}
+
+.decor.four {
+
+    bottom:
+        60px;
+
+    right:
+        -20px;
+
+    transform:
+        rotate(-10deg);
+}
+
+
+/* letter header */
+
+.letter-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
+}
+
+.letter-heading .small {
+
+    color:
+        #aa7287;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        4px;
+
+    margin-bottom:
+        15px;
+}
+
+.letter-heading h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #765367;
+
+    font-size:
+        clamp(46px, 7vw, 78px);
+
+    font-weight:
+        500;
+}
+
+
+/* LETTER PAPER */
+
+.letter-paper {
+
+    background:
+        rgba(255,253,247,0.86);
+
+    border:
+        1px solid #efdce3;
+
+    padding:
+        clamp(35px, 6vw, 65px);
+
+    box-shadow:
+        0 20px 55px
+        rgba(112,76,91,0.09);
+
+    position:
+        relative;
+}
+
+.letter-paper::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        25px;
+
+    top:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        1px;
+
+    background:
+        #f3dfe5;
+}
+
+
+.letter-paper h2 {
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size:
+        34px;
+
+    font-weight:
+        600;
+
+    color:
+        #9b5f78;
+
+    margin-bottom:
+        25px;
+}
+
+.letter-paper p {
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    color:
+        #66565d;
+
+    font-size:
+        clamp(20px, 2.4vw, 25px);
+
+    line-height:
+        1.6;
+}
+
+.letter-paper strong {
+
+    color:
+        #9d5775;
+}
+
+.letter-signature {
+
+    margin-top:
+        35px;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    color:
+        #87556c;
+
+    font-size:
+        28px;
+
+    text-align:
+        right;
+}
+
+
+/* =========================================================
+   PAGE 7 — THE BEGINNING
+   WARM CREAM
+   SINGLE SCREEN / NO SCROLL
+========================================================= */
+
+#page7 {
+
+    height:
+        100vh;
+
+    min-height:
+        100vh;
+
+    padding:
+        30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            #fff8ed 52%,
+            #f8f4ff
+        );
+
+    overflow:
+        hidden;
+
+    text-align:
+        center;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+#page7::before {
+
+    background:
+        #f8e6c7;
+}
+
+#page7::after {
+
+    background:
+        #e5d8fa;
+}
+
+
+/* FIREWORK CANVAS */
+
+#fireworks {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        1;
+}
+
+
+/* ENDING */
+
+.ending-content {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        min(1000px, 94%);
+
+    max-height:
+        94vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+}
+
+.ending-small {
+
+    color:
+        #9a806c;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        5px;
+
+    margin-bottom:
+        clamp(12px, 2vh, 22px);
+}
+
+.ending-content h1 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-weight:
+        500;
+
+    line-height:
+        0.9;
+
+    font-size:
+        clamp(39px, 7vw, 96px);
+
+    color:
+        #65574e;
+}
+
+.ending-content h1 span {
+
+    color:
+        #9274aa;
+}
+
+
+.new-chapter {
+
+    margin-top:
+        clamp(18px, 3vh, 30px);
+
+    color:
+        #7e9a70;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size:
+        clamp(12px, 1.7vw, 17px);
+
+    letter-spacing:
+        3px;
+
+    font-weight:
+        700;
+}
+
+.ending-player {
+
+    margin-top:
+        9px;
+
+    color:
+        #9a8d88;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+}
+
+.ending-player strong {
+
+    color:
+        #765c83;
+}
+
+.ending-congrats {
+
+    margin-top:
+        clamp(13px, 2.5vh, 25px);
+
+    color:
+        #8d7078;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(18px, 2.5vw, 27px);
+}
+
+
+/* START NEXT CHAPTER */
+
+.next-chapter-button {
+
+    margin-top:
+        clamp(18px, 3vh, 30px);
+
+    padding:
+        14px 28px;
+
+    border-radius:
+        50px;
+
+    border:
+        1px solid #cdbad7;
+
+    background:
+        rgba(255,255,255,0.78);
+
+    color:
+        #735d7e;
+
+    font-family:
+        'Quicksand',
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,65,90,0.08);
+
+    transition:
+        0.3s ease;
+}
+
+.next-chapter-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        #80648c;
+
+    color:
+        white;
+}
+
+
+/* FINAL CLICK MESSAGE */
+
+.final-hidden-message {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.8);
+
+    width:
+        min(500px, 85%);
+
+    padding:
+        25px;
+
+    background:
+        rgba(255,253,248,0.96);
+
+    border:
+        1px solid #ddcde5;
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(70,55,80,0.16);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        0.5s ease;
+
+    z-index:
+        30;
+}
+
+.final-hidden-message.show {
+
+    opacity:
+        1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+.final-hidden-message h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #755a83;
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        10px;
+}
+
+.final-hidden-message p {
+
+    color:
+        #81757e;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================================================
+   EASTER EGG
+========================================================= */
+
+.easter-egg {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(255,252,247,0.55);
+
+    backdrop-filter:
+        blur(5px);
+
+    z-index:
+        200;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        0.4s ease;
+}
+
+.easter-egg.show {
+
+    opacity:
+        1;
+
+    pointer-events:
+        auto;
+}
+
+.easter-card {
+
+    width:
+        min(480px, 88%);
+
+    padding:
+        38px 30px;
+
+    border-radius:
+        25px;
+
+    background:
+        #fffdf7;
+
+    border:
+        1px solid #ead9df;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(70,55,70,0.18);
+
+    transform:
+        scale(0.8);
+
+    transition:
+        0.5s ease;
+}
+
+.easter-egg.show .easter-card {
+
+    transform:
+        scale(1);
+}
+
+.easter-icon {
+
+    font-size:
+        45px;
+
+    margin-bottom:
+        12px;
+}
+
+.easter-card h2 {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:
+        #755a83;
+
+    font-size:
+        29px;
+
+    margin-bottom:
+        15px;
+}
+
+.easter-card p {
+
+    color:
+        #756b73;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+}
+
+.close-easter {
+
+    margin-top:
+        22px;
+
+    padding:
+        9px 20px;
+
+    border:
+        none;
+
+    border-radius:
+        50px;
+
+    background:
+        #eadcf0;
+
+    color:
+        #6c5877;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti-piece {
+
+    position:
+        fixed;
+
+    top:
+        -20px;
+
+    width:
+        9px;
+
+    height:
+        14px;
+
+    z-index:
+        150;
+
+    pointer-events:
+        none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+
+        transform:
+            translateY(-20px)
+            rotate(0deg);
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+
+
+    .page {
+
+        padding:
+            70px 20px 100px;
+    }
+
+
+    /* PAGE 2 */
+
+    .profile-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .profile-id {
+
+        text-align:
+            left;
+    }
+
+    .current-quest {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+    .stat {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            7px;
+    }
+
+    .stat-number {
+
+        display:
+            none;
+    }
+
+    .stat-tip {
+
+        left:
+            15px;
+
+        width:
+            calc(100% - 30px);
+    }
+
+
+    /* PAGE 4 */
+
+    .scrapbook {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            30px 20px;
+    }
+
+    .polaroid-image {
+
+        height:
+            180px;
+    }
+
+
+    /* PAGE 6 */
+
+    .letter-paper {
+
+        padding:
+            35px 30px 35px 45px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+
+    /* PAGE 4 */
+
+    .scrapbook {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .polaroid {
+
+        width:
+            min(290px, 100%);
+
+        margin:
+            auto;
+    }
+
+    .polaroid-image {
+
+        height:
+            230px;
+    }
+
+
+    /* PAGE 2 */
+
+    .profile-card {
+
+        padding:
+            20px;
+    }
+
+
+    /* NAV */
+
+    .next-button {
+
+        right:
+            14px;
+
+        bottom:
+            14px;
+    }
+
+    .music-control {
+
+        left:
+            14px;
+
+        bottom:
+            14px;
+    }
+
+}
+
+
+/* =========================================================
+   SHORT SCREENS
+========================================================= */
+
+@media (max-height: 700px) {
+
+
+    #page1 {
+
+        padding:
+            20px;
+    }
+
+    .intro h1 {
+
+        font-size:
+            clamp(43px, 8vw, 80px);
+    }
+
+    .intro p {
+
+        margin-top:
+            15px;
+    }
+
+    .start-button {
+
+        margin-top:
+            22px;
+    }
+
+
+    #page5 {
+
+        padding:
+            20px;
+    }
+
+    .unlock-name {
+
+        font-size:
+            45px;
+    }
+
+
+    #page7 {
+
+        padding:
+            18px;
+    }
+
+    .ending-content h1 {
+
+        font-size:
+            clamp(35px, 7vw, 75px);
+    }
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        8px;
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+        #f8f5fa;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #cbbdd2;
+
+    border-radius:
+        10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #a996b3;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     MUSIC
+========================================================= -->
+
+<audio
+    id="backgroundMusic"
+    src="music.mp3"
+    loop>
+</audio>
+
+
+<button
+    class="music-control"
+    id="musicButton"
+    onclick="toggleMusic()">
+
+    🔇
+
+</button>
+
+
+<!-- =========================================================
+     PAGE 1 — WELCOME
+========================================================= -->
+
+<section
+    class="page active"
+    id="page1">
+
+    <div class="intro">
+
+        <div class="intro-small">
+            PLAYER 01: MOTUU
+        </div>
+
+        <h1>
+
+            I HAVE<br>
+
+            <span>SOMETHING</span><br>
+
+            FOR YOU.
+
+        </h1>
+
+        <p>
+            A little surprise.
+        </p>
+
+        <div class="mission-line">
+            A special mission has been prepared for you.
+        </div>
+
+        <button
+            class="start-button"
+            onclick="startExperience()">
+
+            START GAME
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 2 — PLAYER PROFILE
+========================================================= -->
+
+<section
+    class="page"
+    id="page2">
+
+    <div class="profile-wrapper">
+
+
+        <div class="profile-header">
+
+            <div>
+
+                <div class="profile-tag">
+                    PLAYER PROFILE
+                </div>
+
+                <div class="profile-name">
+                    MOTUU
+                    <span
+                        class="secret-heart"
+                        id="secretHeart"
+                        onclick="secretClick()">
+                        ❤️
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="profile-id">
+
+                PLAYER 01<br>
+
+                <span>
+                    STATUS: ACTIVE
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+
+            <!-- CURRENT QUEST -->
+
+            <div class="current-quest">
+
+                <div>
+
+                    <div class="quest-label">
+                        CURRENT QUEST
+                    </div>
+
+                    <div class="quest-name">
+                        GET A JOB
+                    </div>
+
+                </div>
+
+                <div class="quest-status">
+                    COMPLETED ✓
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-title">
+                PLAYER STATS
+            </div>
+
+
+            <div class="stats">
+
+
+                <!-- INTELLIGENCE -->
+
+                <div
+                    class="stat"
+                    tabindex="0">
+
+                    <div class="stat-name">
+                        INTELLIGENCE
+                    </div>
+
+                    <div class="stat-bar">
+                        ██████████ 100
+                    </div>
+
+                    <div class="stat-number">
+                        100
+                    </div>
+
+                    <div class="stat-tip">
+
+                        <strong>
+                            INTELLIGENCE — 100
+                        </strong>
+
+                        <br>
+
+                        Clearly overqualified.
+
+                    </div>
+
+                </div>
+
+
+                <!-- PATIENCE -->
+
+                <div
+                    class="stat"
+                    tabindex="0">
+
+                    <div class="stat-name">
+                        PATIENCE
+                    </div>
+
+                    <div class="stat-bar">
+                        █████████░ 90
+                    </div>
+
+                    <div class="stat-number">
+                        90
+                    </div>
+
+                    <div class="stat-tip">
+
+                        <strong>
+                            PATIENCE — 90
+                        </strong>
+
+                        <br>
+
+                        Survived applications,
+                        waiting and interview stress.
+
+                    </div>
+
+                </div>
+
+
+                <!-- STRESS -->
+
+                <div
+                    class="stat"
+                    tabindex="0">
+
+                    <div class="stat-name">
+                        STRESS MANAGEMENT
+                    </div>
+
+                    <div class="stat-bar">
+                        ███░░░░░░░ 30 😂
+                    </div>
+
+                    <div class="stat-number">
+                        30
+                    </div>
+
+                    <div class="stat-tip">
+
+                        <strong>
+                            STRESS MANAGEMENT — 30
+                        </strong>
+
+                        <br>
+
+                        We're not discussing this one. 😂
+
+                    </div>
+
+                </div>
+
+
+                <!-- DETERMINATION -->
+
+                <div
+                    class="stat"
+                    tabindex="0">
+
+                    <div class="stat-name">
+                        DETERMINATION
+                    </div>
+
+                    <div class="stat-bar">
+                        ██████████ 100
+                    </div>
+
+                    <div class="stat-number">
+                        100
+                    </div>
+
+                    <div class="stat-tip">
+
+                        <strong>
+                            DETERMINATION — 100
+                        </strong>
+
+                        <br>
+
+                        She wasn't going to stop
+                        until she got there.
+
+                    </div>
+
+                </div>
+
+
+                <!-- SIBLING -->
+
+                <div
+                    class="stat"
+                    tabindex="0">
+
+                    <div class="stat-name">
+                        SIBLING AWESOMENESS
+                    </div>
+
+                    <div class="stat-bar">
+                        ∞
+                    </div>
+
+                    <div class="stat-number">
+                        ∞
+                    </div>
+
+                    <div class="stat-tip">
+
+                        <strong>
+                            SIBLING AWESOMENESS — ∞
+                        </strong>
+
+                        <br>
+
+                        Obviously. No further explanation
+                        required.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ACHIEVEMENT -->
+
+            <div class="achievement-card">
+
+                <div class="achievement-small">
+                    🏆 ACHIEVEMENT UNLOCKED
+                </div>
+
+                <h2>
+                    FIRST JOB
+                </h2>
+
+                <p>
+                    Reward: A lifetime of bragging rights.
+                </p>
+
+            </div>
+
+
+            <div class="congrats-small">
+                🎉 CONGRATULATIONS! 🎉
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next-button"
+        onclick="nextPage()">
+
+        BEGIN QUEST →
+
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 3 — QUEST TIMELINE
+========================================================= -->
+
+<section
+    class="page"
+    id="page3">
+
+    <div class="timeline-wrapper">
+
+
+        <div class="timeline-header">
+
+            <div class="section-label">
+                ✦ QUEST LOG ✦
+            </div>
+
+            <h1>
+                The Journey
+            </h1>
+
+            <p>
+                Every level brought you closer.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- 1 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        QUEST STARTED
+                    </h3>
+
+                    <p>
+                        The goal was simple:
+                        find the next chapter.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        ECONOMICS HONS
+                    </h3>
+
+                    <p>
+                        Four years of learning,
+                        surviving and somehow making
+                        it through.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        SURVIVED THE STRESS
+                    </h3>
+
+                    <p>
+                        There were definitely moments
+                        when the stress bar was NOT at 30.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        APPLICATIONS SENT
+                    </h3>
+
+                    <p>
+                        Resumes prepared.
+                        Applications submitted.
+                        Hope activated.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        INTERVIEWS
+                    </h3>
+
+                    <p>
+                        Questions answered.
+                        Nerves survived.
+                        Confidence levelled up.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINAL -->
+
+            <div class="timeline-item final">
+
+                <div class="timeline-dot">
+                    🔓
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        FIRST JOB UNLOCKED
+                    </h3>
+
+                    <p>
+                        The quest you've been working
+                        toward is finally complete.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next-button"
+        onclick="nextPage()">
+
+        OPEN MEMORIES →
+
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 4 — MEMORIES
+========================================================= -->
+
+<section
+    class="page"
+    id="page4">
+
+    <div class="memories-wrapper">
+
+
+        <div class="memories-header">
+
+            <div class="section-label">
+                ✦ MEMORY ARCHIVE ✦
+            </div>
+
+            <h1>
+                Our Memories
+            </h1>
+
+            <p>
+                A few pieces of the story that came before.
+            </p>
+
+        </div>
+
+
+        <div class="scrapbook">
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="polaroid">
+
+                <div class="polaroid-image">
+
+                    <img
+                        src="image1.jpg"
+                        alt="The Chaos">
+
+                </div>
+
+                <div class="polaroid-title">
+                    THE CHAOS
+                </div>
+
+                <div class="polaroid-caption">
+                    Because apparently normal days
+                    were never an option.
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="polaroid">
+
+                <div class="polaroid-image">
+
+                    <img
+                        src="image2.jpeg"
+                        alt="The Good Days">
+
+                </div>
+
+                <div class="polaroid-title">
+                    THE GOOD DAYS
+                </div>
+
+                <div class="polaroid-caption">
+                    One of those moments worth
+                    keeping forever.
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="polaroid">
+
+                <div class="polaroid-image">
+
+                    <img
+                        src="image3.jpeg"
+                        alt="The Before">
+
+                </div>
+
+                <div class="polaroid-title">
+                    THE BEFORE
+                </div>
+
+                <div class="polaroid-caption">
+                    Back when this whole next chapter
+                    hadn't even started.
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div class="polaroid">
+
+                <div class="polaroid-image">
+
+                    <img
+                        src="image4.jpeg"
+                        alt="Us">
+
+                </div>
+
+                <div class="polaroid-title">
+                    US
+                </div>
+
+                <div class="polaroid-caption">
+                    Still annoying each other.
+                    Some things never change.
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+
+            <div class="polaroid">
+
+                <div class="polaroid-image">
+
+                    <img
+                        src="image5.jpeg"
+                        alt="The Memories">
+
+                </div>
+
+                <div class="polaroid-title">
+                    THE MEMORIES
+                </div>
+
+                <div class="polaroid-caption">
+                    Little moments that somehow
+                    became the best ones.
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 6 -->
+
+            <div class="polaroid">
+
+                <div class="polaroid-image">
+
+                    <img
+                        src="image6.jpeg"
+                        alt="Next Chapter">
+
+                </div>
+
+                <div class="polaroid-title">
+                    BEFORE THE NEXT LEVEL
+                </div>
+
+                <div class="polaroid-caption">
+                    And now we're here.
+                    Ready for whatever comes next.
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next-button"
+        onclick="nextPage()">
+
+        NEXT ACHIEVEMENT →
+
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 5 — FINAL ACHIEVEMENT
+========================================================= -->
+
+<section
+    class="page"
+    id="page5">
+
+
+    <!-- CONFETTI WILL APPEAR HERE -->
+
+
+    <div class="achievement-screen">
+
+
+        <div class="mission-complete">
+            ✦ MISSION COMPLETE ✦
+        </div>
+
+
+        <div class="final-player">
+            PLAYER: MOTUU
+        </div>
+
+
+        <div class="final-quest">
+            QUEST: GET A JOB
+        </div>
+
+
+        <div class="final-status">
+            STATUS: COMPLETED ✓
+        </div>
+
+
+        <div class="final-unlock">
+
+            <span class="trophy">
+                🏆
+            </span>
+
+            <div class="unlock-label">
+                ACHIEVEMENT UNLOCKED
+            </div>
+
+            <div class="unlock-name">
+                FIRST JOB
+            </div>
+
+            <div class="xp">
+                +1000 XP
+            </div>
+
+        </div>
+
+
+        <div class="celebration-message">
+
+            YOU ACTUALLY DID IT. 🎉
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="next-button"
+        onclick="nextPage()">
+
+        PAUSE GAME →
+
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 6 — PERSONAL MESSAGE
+========================================================= -->
+
+<section
+    class="page"
+    id="page6">
+
+
+    <div class="letter-wrapper">
+
+
+        <div class="decor one">
+            ♡
+        </div>
+
+        <div class="decor two">
+            ✦
+        </div>
+
+        <div class="decor three">
+            ♡
+        </div>
+
+        <div class="decor four">
+            ✿
+        </div>
+
+
+        <div class="letter-heading">
+
+            <div class="small">
+                ✦ PAUSE GAME ✦
+            </div>
+
+            <h1>
+                A Message For You
+            </h1>
+
+        </div>
+
+
+        <div class="letter-paper">
+
+
+            <h2>
+                Dear Motuu,
+            </h2>
+
+
+            <p>
+
+                I don't know if you realize just
+                how proud I am of you.
+
+                <br><br>
+
+                You worked for this.
+                You waited for this.
+                You probably stressed about this
+                more times than I know.
+
+                <br><br>
+
+                And now you can finally say:
+
+                <br><br>
+
+                <strong>
+                    I GOT THE JOB.
+                </strong>
+
+                <br><br>
+
+                I'm genuinely so happy for you.
+
+                <br><br>
+
+                Not just because you got a job,
+                but because you earned this moment.
+
+                <br><br>
+
+                You put in the effort,
+                kept going when things got stressful,
+                and eventually made it to this point.
+
+                <br><br>
+
+                So for a moment,
+                don't worry about what comes next.
+
+                <br><br>
+
+                Just enjoy this.
+
+                <br><br>
+
+                Because you did it.
+
+                <br><br>
+
+                And yes,
+                I'm officially claiming the right
+                to brag about my sister now. 😂
+
+                <br><br>
+
+                I'm really, really proud of you.
+
+            </p>
+
+
+            <div class="letter-signature">
+
+                — Your annoying brother ❤️
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="next-button"
+        onclick="nextPage()">
+
+        ONE LAST THING →
+
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 7 — THE BEGINNING
+========================================================= -->
+
+<section
+    class="page"
+    id="page7">
+
+
+    <canvas
+        id="fireworks">
+    </canvas>
+
+
+    <div class="ending-content">
+
+
+        <div class="ending-small">
+            ✦ THE NEXT CHAPTER ✦
+        </div>
+
+
+        <h1>
+
+            THIS ISN'T<br>
+
+            <span>THE END.</span>
+
+            <br>
+
+            IT'S THE BEGINNING.
+
+        </h1>
+
+
+        <div class="new-chapter">
+            NEW CHAPTER UNLOCKED
+        </div>
+
+
+        <div class="ending-player">
+
+            PLAYER 01:
+            <strong>MOTUU</strong>
+
+        </div>
+
+
+        <div class="ending-congrats">
+
+            Congratulations on your first job. ❤️
+
+        </div>
+
+
+        <button
+            class="next-chapter-button"
+            onclick="startNextChapter()">
+
+            START THE NEXT CHAPTER →
+
+        </button>
+
+
+    </div>
+
+
+    <!-- FINAL BUTTON MESSAGE -->
+
+    <div
+        class="final-hidden-message"
+        id="finalMessage">
+
+        <h2>
+            ✨ NEW CHAPTER STARTED ✨
+        </h2>
+
+        <p>
+
+            Go make some memories,
+            learn a ridiculous amount of things,
+            meet amazing people,
+            and absolutely crush this next level.
+
+            <br><br>
+
+            The game was never really about
+            getting the job.
+
+            <br><br>
+
+            It was about seeing how far
+            you could go.
+
+            <br><br>
+
+            And this is only Level 1. ❤️
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     EASTER EGG
+========================================================= -->
+
+<div
+    class="easter-egg"
+    id="easterEgg"
+    onclick="closeEaster(event)">
+
+
+    <div
+        class="easter-card"
+        onclick="event.stopPropagation()">
+
+
+        <div class="easter-icon">
+            🔓
+        </div>
+
+
+        <h2>
+            SECRET ACHIEVEMENT UNLOCKED
+        </h2>
+
+
+        <p>
+
+            <strong>
+                SURVIVED HAVING HARSH AS A BROTHER
+            </strong>
+
+            <br><br>
+
+            REWARD: +999 XP
+
+            <br><br>
+
+            Unfortunately, there's no way
+            to escape now. 😂
+
+        </p>
+
+
+        <button
+            class="close-easter"
+            onclick="closeEaster()">
+
+            ACCEPT MY FATE
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentPage = 1;
+
+const totalPages = 7;
+
+let musicPlaying = false;
+
+let secretClicks = 0;
+
+let fireworksStarted = false;
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const music =
+    document.getElementById(
+        "backgroundMusic"
+    );
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+/* START EXPERIENCE */
+
+function startExperience() {
+
+
+    music.volume = 0.45;
+
+
+    music.play()
+        .then(function() {
+
+            musicPlaying = true;
+
+            musicButton.textContent =
+                "🔊";
+
+        })
+        .catch(function() {
+
+            musicPlaying = false;
+
+        });
+
+
+    nextPage();
+
+}
+
+
+/* MUSIC TOGGLE */
+
+function toggleMusic() {
+
+
+    if (musicPlaying) {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        musicButton.textContent =
+            "🔇";
+
+    }
+
+    else {
+
+        music.play();
+
+        musicPlaying = true;
+
+        musicButton.textContent =
+            "🔊";
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function nextPage() {
+
+
+    if (currentPage >= totalPages) {
+
+        return;
+
+    }
+
+
+    const oldPage =
+        document.getElementById(
+            "page" + currentPage
+        );
+
+
+    oldPage.classList.remove(
+        "active"
+    );
+
+
+    currentPage++;
+
+
+    const newPage =
+        document.getElementById(
+            "page" + currentPage
+        );
+
+
+    newPage.classList.add(
+        "active"
+    );
+
+
+    /*
+       This scrolls the actual webpage,
+       NOT an inner page box.
+    */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+
+    /*
+       Start confetti on Page 5.
+    */
+
+    if (currentPage === 5) {
+
+        launchConfetti();
+
+    }
+
+
+    /*
+       Start fireworks on Page 7.
+    */
+
+    if (currentPage === 7) {
+
+        startFireworks();
+
+    }
+
+}
+
+
+/* =========================================================
+   SECRET EASTER EGG
+========================================================= */
+
+function secretClick() {
+
+
+    secretClicks++;
+
+
+    const heart =
+        document.getElementById(
+            "secretHeart"
+        );
+
+
+    heart.style.transform =
+        "scale(1.35)";
+
+
+    setTimeout(function() {
+
+        heart.style.transform =
+            "scale(1)";
+
+    }, 180);
+
+
+    /*
+       Five clicks unlock the secret.
+    */
+
+    if (secretClicks >= 5) {
+
+        document
+            .getElementById(
+                "easterEgg"
+            )
+            .classList.add(
+                "show"
+            );
+
+
+        secretClicks = 0;
+
+    }
+
+}
+
+
+/* CLOSE EASTER EGG */
+
+function closeEaster(event) {
+
+
+    if (
+        event &&
+        event.target !== event.currentTarget
+    ) {
+
+        return;
+
+    }
+
+
+    document
+        .getElementById(
+            "easterEgg"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   FINAL PAGE BUTTON
+========================================================= */
+
+function startNextChapter() {
+
+
+    const message =
+        document.getElementById(
+            "finalMessage"
+        );
+
+
+    message.classList.add(
+        "show"
+    );
+
+
+    /*
+       Little extra burst of fireworks.
+    */
+
+    for (
+        let i = 0;
+        i < 5;
+        i++
+    ) {
+
+        setTimeout(
+            createFirework,
+            i * 250
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function launchConfetti() {
+
+
+    const colors = [
+
+        "#e9a8a8",
+        "#d9b7e8",
+        "#a9d7c0",
+        "#f1c98b",
+        "#9ec9dc",
+        "#f3b7cc"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 100;
+        i++
+    ) {
+
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "confetti-piece";
+
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()
+                    * colors.length
+                )
+            ];
+
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 3)
+            + "s";
+
+
+        piece.style.animationDelay =
+            (Math.random() * 1.5)
+            + "s";
+
+
+        piece.style.transform =
+            "rotate("
+            + Math.random() * 360
+            + "deg)";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(
+            function() {
+
+                piece.remove();
+
+            },
+            6000
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   FIREWORKS
+========================================================= */
+
+let particles = [];
+
+let fireworksCanvas;
+
+let fireworksCtx;
+
+
+/* START FIREWORKS */
+
+function startFireworks() {
+
+
+    if (fireworksStarted) {
+
+        return;
+
+    }
+
+
+    fireworksStarted = true;
+
+
+    fireworksCanvas =
+        document.getElementById(
+            "fireworks"
+        );
+
+
+    fireworksCtx =
+        fireworksCanvas.getContext(
+            "2d"
+        );
+
+
+    resizeFireworks();
+
+
+    window.addEventListener(
+        "resize",
+        resizeFireworks
+    );
+
+
+    animateFireworks();
+
+
+    createFirework();
+
+
+    setTimeout(
+        createFirework,
+        500
+    );
+
+
+    setTimeout(
+        createFirework,
+        1000
+    );
+
+
+    setInterval(
+        createFirework,
+        1400
+    );
+
+}
+
+
+/* RESIZE */
+
+function resizeFireworks() {
+
+
+    fireworksCanvas.width =
+        window.innerWidth;
+
+
+    fireworksCanvas.height =
+        window.innerHeight;
+
+}
+
+
+/* RANDOM */
+
+function random(min, max) {
+
+    return Math.random()
+        * (max - min)
+        + min;
+
+}
+
+
+/* CREATE FIREWORK */
+
+function createFirework() {
+
+
+    if (!fireworksCanvas) {
+
+        return;
+
+    }
+
+
+    const x =
+        random(
+            80,
+            fireworksCanvas.width - 80
+        );
+
+
+    const y =
+        random(
+            70,
+            fireworksCanvas.height * 0.60
+        );
+
+
+    const colors = [
+
+        "#a88ccf",
+        "#81b9d2",
+        "#e7a2b8",
+        "#9fc58e",
+        "#e0b06b",
+        "#9daed4"
+
+    ];
+
+
+    const color =
+        colors[
+            Math.floor(
+                Math.random()
+                * colors.length
+            )
+        ];
+
+
+    for (
+        let i = 0;
+        i < 55;
+        i++
+    ) {
+
+
+        const angle =
+            Math.random()
+            * Math.PI
+            * 2;
+
+
+        const speed =
+            random(
+                1.5,
+                5.5
+            );
+
+
+        particles.push({
+
+            x:
+                x,
+
+            y:
+                y,
+
+            vx:
+                Math.cos(angle)
+                * speed,
+
+            vy:
+                Math.sin(angle)
+                * speed,
+
+            life:
+                100,
+
+            color:
+                color,
+
+            size:
+                random(
+                    1,
+                    3
+                )
+
+        });
+
+    }
+
+}
+
+
+/* UPDATE */
+
+function updateFireworks() {
+
+
+    for (
+        let i = particles.length - 1;
+        i >= 0;
+        i--
+    ) {
+
+
+        const p =
+            particles[i];
+
+
+        p.x +=
+            p.vx;
+
+
+        p.y +=
+            p.vy;
+
+
+        p.vy +=
+            0.035;
+
+
+        p.vx *=
+            0.985;
+
+
+        p.vy *=
+            0.985;
+
+
+        p.life -=
+            1;
+
+
+        if (
+            p.life <= 0
+        ) {
+
+            particles.splice(
+                i,
+                1
+            );
+
+        }
+
+    }
+
+}
+
+
+/* DRAW */
+
+function drawFireworks() {
+
+
+    fireworksCtx.clearRect(
+        0,
+        0,
+        fireworksCanvas.width,
+        fireworksCanvas.height
+    );
+
+
+    particles.forEach(
+        function(p) {
+
+
+            fireworksCtx.globalAlpha =
+                p.life / 100;
+
+
+            fireworksCtx.beginPath();
+
+
+            fireworksCtx.arc(
+                p.x,
+                p.y,
+                p.size,
+                0,
+                Math.PI * 2
+            );
+
+
+            fireworksCtx.fillStyle =
+                p.color;
+
+
+            fireworksCtx.fill();
+
+        }
+    );
+
+
+    fireworksCtx.globalAlpha =
+        1;
+
+}
+
+
+/* ANIMATE */
+
+function animateFireworks() {
+
+
+    if (!fireworksCanvas) {
+
+        return;
+
+    }
+
+
+    updateFireworks();
+
+
+    drawFireworks();
+
+
+    requestAnimationFrame(
+        animateFireworks
+    );
+
+}
+
+
+/* =========================================================
+   KEYBOARD NAVIGATION
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+
+            nextPage();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
